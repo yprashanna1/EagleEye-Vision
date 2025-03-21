@@ -1,14 +1,14 @@
 // src/components/Dashboard.js
 import React from 'react';
-import VideoFeed from './VideoFeed';  // Import the VideoFeed component
+import VideoFeed from './VideoFeed';
+import AlertVerification from './AlertVerification';
 
 const Dashboard = () => {
   return (
     <div>
       <h1>EagleEye Vision Dashboard</h1>
-      {/* Render the VideoFeed component */}
       <VideoFeed />
-      {/* You can add more components here later (like alerts, controls, etc.) */}
+      <AlertVerification />
     </div>
   );
 };

@@ -15,21 +15,22 @@ async def test_video():
 @router.post("/detect")
 async def detect_video(file: UploadFile = File(...)):
     """
-    Accepts a video file upload and processes it using the video service.
+    Accepts a video file upload, processes it using the video service,
+    and returns the detection results.
     """
     try:
-        # Read the file content
+        # Read the file content from the uploaded file
         contents = await file.read()
         
-        # Save the file temporarily
+        # Save the file temporarily in the project directory
         temp_file = f"temp_{file.filename}"
         with open(temp_file, "wb") as f:
             f.write(contents)
         
-        # Process the video using our service
+        # Process the video using our video service
         detections = process_video(temp_file)
         
-        # Optionally, delete the temporary file after processing
+        # Remove the temporary file after processing
         os.remove(temp_file)
         
         return {"detections": detections}
