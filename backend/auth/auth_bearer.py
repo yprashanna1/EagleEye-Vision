@@ -3,6 +3,7 @@
 def verify_token(token: str) -> bool:
     """
     Dummy function to verify a token.
-    Replace with a proper implementation.
+    In a real application, you'd decode and verify the JWT.
     """
-    return token == "token"
+    # For demonstration, if the token starts with "token-", we assume it's valid.
+    return token.startswith("token-")
