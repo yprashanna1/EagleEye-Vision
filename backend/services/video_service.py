@@ -2,9 +2,11 @@
 
 def process_video(file_path: str):
     """
-    Dummy function to process a video file.
-    Calls the detection model to get detections.
+    Processes the video file using the detection model.
+    For the MVP, we process just one frame and return dummy detections.
     """
     from models.detection_model import detect_objects
+    
+    # Call the dummy detection function
     detections = detect_objects(file_path)
     return detections
